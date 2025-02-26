@@ -1,0 +1,6 @@
+{
+  "pedidos": [
+    { "id": 1, "descricao": "Pedido 1", "valor": 100 },
+    { "id": 2, "descricao": "Pedido 2", "valor": 200 }
+  ]
+}
