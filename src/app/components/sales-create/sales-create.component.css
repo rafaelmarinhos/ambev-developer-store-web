@@ -1,17 +1,26 @@
-.container {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  .full-width {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  
-  h2 {
-    text-align: center;
-  }  
+.item-container {
+  display: flex;
+  gap: 12px; /* Espaço entre os campos do item */
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 16px; /* Adiciona espaçamento entre os campos */
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 15px;
+}
+
+h2 {
+  margin: 10px;
+}

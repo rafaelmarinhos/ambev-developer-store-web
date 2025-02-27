@@ -9,36 +9,42 @@
       <!-- ID -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
-        <td mat-cell *matCellDef="let pedido"> {{ pedido.id }} </td>
+        <td mat-cell *matCellDef="let sale"> {{ sale.id }} </td>
       </ng-container>
   
-      <!-- Descrição -->
-      <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef> Descrição </th>
-        <td mat-cell *matCellDef="let pedido"> {{ pedido.descricao }} </td>
+      <!-- Customer -->
+      <ng-container matColumnDef="customer">
+        <th mat-header-cell *matHeaderCellDef> Customer </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.customerId }} </td>
       </ng-container>
   
-      <!-- Valor -->
-      <ng-container matColumnDef="valor">
-        <th mat-header-cell *matHeaderCellDef> Valor </th>
-        <td mat-cell *matCellDef="let pedido"> {{ pedido.valor | currency }} </td>
+      <!-- Branch -->
+      <ng-container matColumnDef="branch">
+        <th mat-header-cell *matHeaderCellDef> Branch </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.branchId }} </td>
+      </ng-container>
+
+      <!-- Branch -->
+      <ng-container matColumnDef="totalAmount">
+        <th mat-header-cell *matHeaderCellDef> Total </th>
+        <td mat-cell *matCellDef="let sale"> {{ sale.totalAmount }} </td>
       </ng-container>
   
-      <!-- Ações -->
-      <ng-container matColumnDef="acoes">
-        <th mat-header-cell *matHeaderCellDef> Ações </th>
-        <td mat-cell *matCellDef="let pedido">
-          <button mat-icon-button color="accent">
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let sale">
+          <button mat-icon-button color="accent" (click)="editSale(sale)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button color="warn">
+          <button mat-icon-button color="warn" (click)="cancelSale(sale.id)">
             <mat-icon>delete</mat-icon>
           </button>
         </td>
       </ng-container>
   
-      <tr mat-header-row *matHeaderRowDef="['id', 'descricao', 'valor', 'acoes']"></tr>
-      <tr mat-row *matRowDef="let row; columns: ['id', 'descricao', 'valor', 'acoes'];"></tr>
+      <tr mat-header-row *matHeaderRowDef="['id', 'customer', 'branch', 'totalAmount', 'actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['id', 'customer', 'branch', 'totalAmount', 'actions'];"></tr>
     </table>
   </div>
   

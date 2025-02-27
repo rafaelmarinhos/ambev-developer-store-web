@@ -1,4 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
+
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+    --mat-dialog-container-max-width: 40vw !important;
+    --mat-dialog-container-min-width: 40vw !important;
+}
+  
+::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
+    max-width: 80vw !important; /* Força a largura do modal */
+    min-width: 50vw !important; /* Garante que o modal tenha um tamanho mínimo */
+    width: 80vw !important; /* Define a largura */    
+    max-height: 90vh !important; /* Define a altura máxima */
+    height: 40vw !important; /* Ajusta a altura conforme necessário */
+}
+
+::ng-deep .mat-mdc-dialog-container {
+    padding: 20px !important; /* Adiciona espaçamento dentro do modal */
+    border-radius: 12px !important; /* Deixa os cantos arredondados */
+}
+  
+::ng-deep .cdk-overlay-pane.mat-mdc-dialog-panel {
+    padding: 10 !important; /* Remove qualquer padding extra */
+}
