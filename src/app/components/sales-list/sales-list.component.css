@@ -19,4 +19,17 @@
   table {
     width: 100%;
   }
-  
+
+  /* Container dos botões */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Mantém um botão na esquerda e o outro na direita */
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Garante que o botão de logout fique à direita */
+.button-container button:last-child {
+  margin-left: auto;
+}

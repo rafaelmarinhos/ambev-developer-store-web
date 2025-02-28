@@ -9,6 +9,8 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { SalesCreateComponent } from '../sales-create/sales-create.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { MockDataService } from '../../services/mock-data.service';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -37,6 +39,8 @@ export class SalesListComponent {
   constructor(
     private saleService: SalesService, 
     private mockDataService: MockDataService,
+    private authService: AuthService, 
+    private router: Router,
     private dialog: MatDialog) {}
 
   // load sales on init component
@@ -112,5 +116,10 @@ export class SalesListComponent {
   // get branch name by id
   getBranchName(id: string): string {
     return this.branches.find(b => b.id === id)?.name || 'Unkown';
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
   }
 }

@@ -1,9 +1,10 @@
 <div class="container">
     <h2>Sales</h2>
   
-    <button mat-raised-button color="primary" (click)="showCreateSaleModal()">
-      + New
-    </button>
+    <div class="button-container">
+      <button mat-raised-button color="primary" (click)="showCreateSaleModal()">+ New</button>
+      <button mat-raised-button color="warn" (click)="logout()">Sair</button>
+    </div>
   
     <table mat-table [dataSource]="sales" class="mat-elevation-z8">
       <!-- ID -->
