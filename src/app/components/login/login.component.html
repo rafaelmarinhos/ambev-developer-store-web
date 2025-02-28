@@ -4,19 +4,19 @@
   
       <form [formGroup]="loginForm" (ngSubmit)="login()">
         <mat-form-field appearance="outline">
-          <mat-label>Usuário</mat-label>
+          <mat-label>Email</mat-label>
           <input matInput formControlName="email" />
         </mat-form-field>
   
         <mat-form-field appearance="outline">
-          <mat-label>Senha</mat-label>
+          <mat-label>Password</mat-label>
           <input matInput type="password" formControlName="password" />
         </mat-form-field>
   
         <!-- Mensagem de erro -->
         <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
   
-        <button mat-raised-button color="primary" type="submit">Entrar</button>
+        <button mat-raised-button color="primary" type="submit">LOGIN</button>
       </form>
     </mat-card>
 </div>
